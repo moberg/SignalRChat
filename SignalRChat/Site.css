@@ -1,0 +1,169 @@
+﻿html, body {height: 100%;}
+
+#wrap {min-height: 100%;}
+
+#main {overflow:auto;
+	padding-bottom: 150px;}  /* must be same height as the footer */
+
+#footer {position: relative;
+	margin-top: -40px; /* negative value of footer height */
+	height: 40px;
+	clear:both;} 
+
+/*Opera Fix*/
+body:before {
+	content:"";
+	height:100%;
+	float:left;
+	width:0;
+	margin-top:-32767px;/
+}
+
+#footer 
+{
+    background-color: #86BDE3;
+    text-align: center;
+}
+
+.round {
+     -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
+}
+
+.round2 {
+     -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+}
+
+
+body 
+{
+    background: #C0DEF3;
+    font-family: "Trebuchet MS";
+    font-size: 13px;
+    margin: 0px;
+}
+
+.error
+{
+    color: Red;   
+}
+
+.info 
+{
+    font-style: italic;
+}
+
+input[type='button']
+{
+    padding: 5px;
+    min-width: 100px;
+}
+
+input[type='text']
+{
+    border: solid 1px #427395;
+    padding: 5px;
+}
+
+input[type="text"]:focus
+{
+    border: solid 1px #115381;
+}
+
+/* Login page */
+#info 
+{
+    background: #64AFE3;
+    width:370px;
+	height:190px;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin:-145px 0 0 -185px;
+	padding: 20px;
+	text-align: center;
+}
+
+/* Chat */
+#chat
+{
+    margin:10px;   
+}
+
+#logout
+{
+    position: fixed;
+    right: 10px;
+    top: 10px;
+}
+
+.chat-box
+{
+    background: #64AFE3;
+    position: fixed;
+    left: 10px;
+    right: 190px;
+    top: 40px;
+    bottom: 51px;
+}
+
+#messages
+{
+    overflow: auto;
+    position: fixed;
+    bottom: 90px;
+    top: 40px;
+    left: 20px;
+    right: 210px;
+}
+#message-list
+{
+    padding-left: 0px;
+}
+
+#message-list li
+{
+    list-style:none;   
+}
+
+#chatform
+{
+    position: fixed;
+    bottom: 60px;
+    left: 20px;
+    position: fixed;
+    right: 200px;
+}
+
+#msg 
+{
+    width: 95%;
+}
+
+
+/* User list */ 
+.users-box
+{
+    min-width: 150px;
+    padding: 10px;
+    background: #64AFE3;
+    position: fixed;
+    right: 10px;
+    top: 40px;
+}
+
+.users-box ul
+{
+    padding-left: 4px;
+}
+
+.users-box ul li
+{
+    list-style: none;
+}
+

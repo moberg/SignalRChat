@@ -1,0 +1,7 @@
+C:\dev\Test\SignalRChat\SignalRChat\bin\SignalRChat.dll
+C:\dev\Test\SignalRChat\SignalRChat\bin\SignalRChat.pdb
+C:\dev\Test\SignalRChat\SignalRChat\bin\Microsoft.Web.Infrastructure.dll
+C:\dev\Test\SignalRChat\SignalRChat\bin\SignalR.dll
+C:\dev\Test\SignalRChat\SignalRChat\obj\Debug\ResolveAssemblyReference.cache
+C:\dev\Test\SignalRChat\SignalRChat\obj\Debug\SignalRChat.dll
+C:\dev\Test\SignalRChat\SignalRChat\obj\Debug\SignalRChat.pdb
