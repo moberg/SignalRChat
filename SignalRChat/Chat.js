@@ -54,7 +54,7 @@
     };
 
     chat.loggedOff = function (user, time) {
-        $('#messages-list').append('<li class="info">{0} {1} logged off</li>'.format(time, user));
+        $('#message-list').append('<li class="info">{0} {1} logged off</li>'.format(time, user));
         getUsers();
     };
 
