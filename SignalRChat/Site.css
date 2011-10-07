@@ -114,16 +114,17 @@ input[type="text"]:focus
 
 #messages
 {
+    background: white;
     overflow: auto;
     position: fixed;
-    bottom: 90px;
-    top: 40px;
-    left: 20px;
-    right: 210px;
+    bottom: 103px;
+    top: 51px;
+    left: 24px;
+    right: 205px;
 }
 #message-list
 {
-    padding-left: 0px;
+    padding-left: 10px;
 }
 
 #message-list li
