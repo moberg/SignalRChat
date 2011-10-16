@@ -1,5 +1,24 @@
 ﻿$(function () {
+    function User(username, htmlListItem) {
+        var self = {};
+        var username = username;
+        var rxTyping = new Rx.Subject();
+        var htmlListItem = htmlListItem;
+
+        rxTyping.AsObservable()      // RX 
+            .Do(function (user) { htmlListItem.html(username + " ..."); })
+            .Throttle(1200)
+            .Subscribe(function (user) { htmlListItem.html(username); });
+
+        self.typing = function () {
+            rxTyping.OnNext(username);
+        };
+
+        return self;
+    }
+
     var onlineUsers = null;
+    var userList = [];
     var chat = $.connection.chat;
 
     var getUsers = function () {
@@ -11,8 +30,13 @@
 
     var updateUserList = function () {
         $('#users li').remove();
+        userList = [];
+
         $.each(onlineUsers, function () {
-            $('#users').append('<li>{0}</li>'.format(this.Name));
+            var listItem = $('<li>{0}</li>'.format(this.Name));
+            $('#users').append(listItem);
+
+            userList[this.Name] = User(this.Name, listItem);
         });
     };
 
@@ -42,6 +66,10 @@
         chat.logout();
     }
 
+    var keypressed = function () {
+        chat.keypressed();
+    }
+
     // Callbacks from server
     chat.message = function (user, msg, time) {
         $('#message-list').append('<li class="message">{0} {1}: {2}</li>'.format(time, user, msg));
@@ -57,6 +85,10 @@
         $('#message-list').append('<li class="info">{0} {1} logged off</li>'.format(time, user));
         getUsers();
     };
+        
+    chat.userTyping = function (user) {
+        userList[user].typing();
+    };
 
     // Form events
     $("#btn_send").click(function () { send(); $('#msg').focus(); });
@@ -64,6 +96,10 @@
     $("#btn_logout").click(function () { logout(); });
     $('#chatform').submit(function () { send(); return false; });
     $('#startform').submit(function () { login(); return false; });
+
+    $("#msg").toObservable("keypress") // RX 
+        .OneInTime(1000)
+        .Subscribe(function () { keypressed(); });
 
     // Logout when user closes browser
     window.onbeforeunload = function () { logout(); };

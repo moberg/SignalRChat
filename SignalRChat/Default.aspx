@@ -8,6 +8,9 @@
     <script src="/Scripts/jquery-1.6.4.min.js" type="text/javascript"></script>
     <script src="/Scripts/json2.min.js" type="text/javascript"></script>
     <script src="/Scripts/jquery.signalR.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery.timer.js" type="text/javascript"></script>
+    <script src="/Scripts/rx.js" type="text/javascript"></script>
+    <script src="/Scripts/rx.jQuery.js" type="text/javascript"></script>
     <script src="/Scripts/extensions.js" type="text/javascript"></script>
     <script src="/signalr/hubs" type="text/javascript"></script>
     <script src="/Chat.js" type="text/javascript"></script>

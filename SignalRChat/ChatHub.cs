@@ -62,6 +62,20 @@ namespace SignalRChat
             Logout();
         }
 
+        public Task Keypressed()
+        {
+            var user = _users.Values.FirstOrDefault(u => u.ClientId == Context.ClientId);
+
+            if (user == null)
+            {
+                throw new Exception("User is not logged in");
+            }
+
+            return Clients.userTyping(user.Name);
+        }
+
+        
+
         public IEnumerable<ChatUser> GetUsers()
         {
             return _users.Values.OrderBy(x => x.Name);

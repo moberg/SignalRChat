@@ -7,3 +7,11 @@
     ;
     });
 };
+
+
+Rx.Observable.prototype.OneInTime = function (delay) {
+    return this
+        .Take(1)
+        .Merge(Rx.Observable.Empty().Delay(delay))
+        .Repeat();
+};
